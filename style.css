@@ -1,0 +1,77 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  min-height: 100%;
+}
+
+header {
+  background-color: #e0e0e0;
+  border: 1px solid;
+  text-align: center;
+  padding: 1.25em 0; /* Использование em для отступов */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'main-box main-box aside'
+    'second-box1 second-box2 aside'
+    'box-extra box-extra aside';
+  gap: 2%; /* Использование процентов для отступов между элементами */
+  margin: 1%; /* Использование процентов для внешних отступов */
+}
+
+.main-box {
+  grid-column: 1 / span 2; 
+  grid-area: main-box;
+  text-align: center;
+  padding: 1.25em;
+  background-color: #fff;
+}
+
+.second-box1, .second-box2, .box-extra {
+  text-align: center;
+  padding: 1.25em;
+  background-color: #feeab9;
+}
+
+.second-box1, .second-box2 {
+  text-align: center;
+}
+
+.box-extra {
+  grid-column: 1 / span 2; 
+  grid-area: box-extra;
+}
+
+aside {
+  grid-area: aside;
+  border: 1px solid;
+  text-align: center;
+  padding: 1.25em;
+  background-color: #ddeccb;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.footer-box {
+  background-color: #fafafa;
+  padding: 1.25em;
+  margin: 1%;
+  min-height: 10%; /* Использование процентов для высоты блока */
+  width: 70%; 
+  text-align: center;
+}
